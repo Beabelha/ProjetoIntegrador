@@ -8,11 +8,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 </head>
 <body>
-    <hr>
     <div class="container">
-            <form method="POST" action="/todos/store">
+        <h2 class="centered">Editar</h2>
+        <hr>
+            <form method="POST" action="/todos/store/{{$todos->id}}">
                 @csrf
-                <input type="hidden" name="id" value="{{$todos->id}}">
+
                 <div class="form-group">
                   <label for="exampleFormControlInput1">Nome</label>
                   <input name="name" type="text" class="form-control" id="exampleFormControlInput1" value="{{ $todos -> name }}">
@@ -25,6 +26,6 @@
                 <button type="submit" class="btn btn-primary">Editar</button>
               </form>
               <hr>
-        <a href="/todos"> Voltar </a>
+        <a href="/todos" class="btn btn-dark"> Voltar </a>
 </body>
 </html>
